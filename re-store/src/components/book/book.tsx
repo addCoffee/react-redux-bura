@@ -1,7 +1,8 @@
-import React from 'react'
-import { Book } from 'src/models/Books.model';
+import React from 'react';
 
-const Book = ({title, author}: Book) => {
+import {BookModel} from '../../models/Books.model';
+
+const Book = ({title, author}: BookModel) => {
   return (
     <div className="book">
       <div>

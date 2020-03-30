@@ -1,7 +1,7 @@
-import { Book } from "src/models/Books.model";
+import {BookModel} from "src/models/Books.model";
 
 export default class BookstoreService {
-  getBooks(): Book[] {
+  getBooks(): BookModel[] {
     return [
       {
         id: 1,

@@ -1,8 +1,8 @@
-import { Book } from "src/models/Books.model";
+import {BookModel} from "../models/Books.model";
 
-const booksLoaded = (newBooks: Book[]) => {
+const booksLoaded = (newBooks: BookModel[]) => {
   return {
-    type: 'BOOKED_LOADED',
+    type: 'BOOKS_LOADED',
     payload: newBooks,
   };
 };

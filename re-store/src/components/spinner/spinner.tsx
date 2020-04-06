@@ -1,8 +1,10 @@
 import React from 'react';
-import {ICONS} from 'src/utils/utils';
+import {ICONS} from '../../utils/utils';
 
 export default function Spinner() {
   return (
-    <img src={ICONS.loading} alt=""/>
+    <div className="spinner-container">
+      <img src={ICONS.loading} alt=""/>
+    </div>
   );
 }

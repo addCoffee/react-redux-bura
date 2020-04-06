@@ -1,5 +1,6 @@
 import React from 'react';
 import {ICONS} from '../../utils/utils';
+import {Link} from 'react-router-dom';
 
 interface HeaderProps {
   countItems: number;
@@ -9,11 +10,15 @@ interface HeaderProps {
 export default function Header({countItems, total}: HeaderProps) {
   return (
     <header>
-      <a className="logo" href="">ReStore</a>
-      <a className="cart"href="">
-        <img src={ICONS.cart} alt=""/>
-        {countItems} items (${total})
-        </a>
+      <Link to="/">
+        <div className="logo" >ReStore</div>
+      </Link>
+      <Link to="/cart">
+        <div className="cart">
+          <img src={ICONS.cart} alt=""/>
+          {countItems} items (${total})
+        </div>
+      </Link>
     </header>
   )
 }

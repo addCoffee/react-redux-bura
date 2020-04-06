@@ -3,6 +3,7 @@ import {Route, Switch} from 'react-router-dom';
 import HomePage from './pages/home-page';
 import CartPage from './pages/cart-page';
 import Header from './header/header';
+import ShoppingCart from './shopping-cart/shopping-cart';
 
 export const App = () => {
   return (
@@ -19,6 +20,7 @@ export const App = () => {
           component={CartPage}
         />
       </Switch>
+      <ShoppingCart />
     </main>
   );
 }

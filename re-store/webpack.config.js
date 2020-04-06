@@ -30,16 +30,18 @@ module.exports = {
           'sass-loader',
         ],
       },
-      // {
-      //   test: /\.(js|jsx)$/,
-      //   exclude: /(node_modules)/,
-      //   use: {
-      //       loader: "babel-loader",
-      //       options: {
-      //           presets: ["@babel/preset-react"],
-      //       },
-      //   },
-      // },
+      {
+        test: /\.(png|svg|jpg)$/,
+        use: [
+          {
+              loader: "file-loader",
+              options: {
+                name: "[name].[ext]",
+                esModule: false,
+              },
+          },
+        ],
+      },
     ],
   },
   resolve: {

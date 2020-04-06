@@ -1,7 +1,8 @@
-import React from 'react'
+import React from 'react';
+import {ICONS} from 'src/utils/utils';
 
 export default function Spinner() {
   return (
-    <img src="@img/loadins.svg" alt=""/>
+    <img src={ICONS.loading} alt=""/>
   );
 }

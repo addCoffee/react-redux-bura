@@ -1,4 +1,4 @@
-const initialState = {
+export const initialState = {
   books: [],
   loading: true,
   error: null,
@@ -6,7 +6,7 @@ const initialState = {
 
 interface Action {
   type: string;
-  payload?: unknown;
+  payload?: any;
 }
 
 const reducer = (state = initialState, action: Action) => {

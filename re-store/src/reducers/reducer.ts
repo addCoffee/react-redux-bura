@@ -1,4 +1,12 @@
-export const initialState = {
+import {BookModel} from "models/Books.model";
+
+export interface StoreState {
+  books: BookModel[],
+  loading: boolean,
+  error: null | string,
+}
+
+export const initialState: StoreState = {
   books: [],
   loading: true,
   error: null,

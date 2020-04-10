@@ -1,10 +1,10 @@
-import reducer, { initialState } from '../reducers/reducer';
+import reducer, {initialState, StoreState} from '../reducers/reducer';
 import {booksRequested, booksLoaded, booksError} from '../actions/actions';
-import { BookModel } from '../models/Books.model';
+import {BookModel} from '../models/Books.model';
 
 
-describe('>>>R E D U C E R --- Test calculatorReducers', () => {
-  let state: { books: any[]; loading: boolean; error: any; } = initialState;
+describe('test Reducer output', () => {
+  let state: StoreState = initialState;
 
   it('test reducer for BOOKS_REQUESTED', () => {
     state = reducer(state, booksRequested())

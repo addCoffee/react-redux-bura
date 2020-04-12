@@ -1,14 +1,21 @@
-import reducer, {initialState, StoreState} from '../reducers/reducer';
+import reducer, {StoreState} from '../reducers/reducer';
 import {booksRequested, booksLoaded, booksError} from '../actions/actions';
 import {BookModel} from '../models/Books.model';
 
 
 describe('test Reducer output', () => {
-  let state: StoreState = initialState;
+  let state: StoreState = {
+    bookList: {
+      books: [],
+      loading: true,
+      error: null,
+    },
+    cartItems: []
+  };
 
   it('test reducer for BOOKS_REQUESTED', () => {
     state = reducer(state, booksRequested())
-    expect(state).toHaveProperty('loading', true)
+    expect(state.bookList).toHaveProperty('loading', true)
   });
   
   it('test reducer for BOOKS_LOADED', () => {
@@ -21,13 +28,13 @@ describe('test Reducer output', () => {
     }];
 
     state = reducer(state, booksLoaded(newBooks));
-    expect(state).toEqual({books: newBooks, loading: false, error: null});
+    expect(state.bookList).toEqual({books: newBooks, loading: false, error: null});
   });
 
   it('test reducer for BOOKS_ERROR', () => {
     const errorText = 'wow, something been wrong';
     state = reducer(state, booksError(errorText));
-    expect(state).toHaveProperty('error', errorText);
+    expect(state.bookList).toHaveProperty('error', errorText);
   });
   
   

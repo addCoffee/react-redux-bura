@@ -16,6 +16,7 @@ export const App = () => {
           component={HomePage}
         />
         <Route
+          exact
           path="/cart"
           component={CartPage}
         />

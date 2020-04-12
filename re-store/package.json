@@ -11,9 +11,10 @@
   },
   "scripts": {
     "start": "webpack-dev-server --mode development",
-    "build": "yarn test && webpack --mode production",
+    "build": "yarn type-check && yarn test && webpack --mode production",
     "test": "jest --coverage",
-    "test-w": "jest --watch"
+    "test-w": "jest --watch",
+    "type-check": "tsc"
   },
   "browserslist": {
     "production": [

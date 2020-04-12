@@ -5,3 +5,8 @@ export interface BookModel {
   image: string;
   price: number;
 }
+
+export interface CartItem extends BookModel {
+  count: number;
+  total: number;
+}

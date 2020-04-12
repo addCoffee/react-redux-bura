@@ -2,7 +2,12 @@ import React from 'react';
 
 import {BookModel} from '../../models/Books.model';
 
-const Book = ({title, author, image, price}: BookModel) => {
+interface BookProps {
+  book: BookModel;
+  onAdd: (bookId: number) => void;
+}
+
+const Book = ({book: {title, author, image, price, id}, onAdd}: BookProps) => {
   return (
     <div className="book">
       <img src={image} alt=""/>
@@ -13,7 +18,12 @@ const Book = ({title, author, image, price}: BookModel) => {
           <div className="price">${price}</div>
         </div>
         <div className="controls">
-          <button type="button">Add to cart</button>
+          <button
+            type="button"
+            onClick={() => onAdd(id)}
+          >
+            Add to cart
+          </button>
         </div>
       </div>
     </div>

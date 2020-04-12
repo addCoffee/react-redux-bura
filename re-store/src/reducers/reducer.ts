@@ -1,33 +1,26 @@
-import {BookModel} from "models/Books.model";
+import {BookModel, CartItem} from "../models/Books.model";
+import updateBookList from "./book-list";
+import updateShoppingCart from "./shopping-cart";
 
 export interface StoreState {
-  books: BookModel[],
-  loading: boolean,
-  error: null | string,
+  bookList: {
+    books: BookModel[],
+    loading: boolean,
+    error: null | string,
+  };
+  cartItems: CartItem[];
 }
 
-export const initialState: StoreState = {
-  books: [],
-  loading: true,
-  error: null,
-}
-
-interface Action {
+export interface Action {
   type: string;
   payload?: any;
 }
 
-const reducer = (state = initialState, action: Action) => {
-  switch (action.type) {
-    case 'BOOKS_REQUESTED':
-      return {...state, books: [], loading: true, error: null};
-    case 'BOOKS_LOADED':
-      return {...state, books: action.payload, loading: false, error: null};
-    case 'BOOKS_ERROR':
-      return {...state, books: [], loading: false, error: action.payload};
-    default:
-      return state;
-  }
-}
+const reducer = (state: StoreState, action: Action): StoreState => {
+  return {
+    bookList: updateBookList(state, action),
+    cartItems: updateShoppingCart(state, action),
+  };
+};
 
 export default reducer;

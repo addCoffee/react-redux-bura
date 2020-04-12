@@ -7,8 +7,10 @@
     "allowJs": true,
     "esModuleInterop": true,
     "typeRoots": ["node_modules/@types"],
-    "baseUrl": "./src",
+    "baseUrl": ".",
   },
-  
-  "exclude": ["node_modules"]
+  "exclude": [
+    "dist",
+    "node_modules"
+  ]
 }
